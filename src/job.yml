@@ -6,8 +6,8 @@ command: >-
   --reg_rate $reg_rate
 inputs:
   training_data:
-    type: uri_folder
-    path: vscode-remote://codespaces%2Bfriendly-space-goldfish-7w7v45qxr5g2xvvg/workspaces/mslearn-mlops-Practice/experimentation/data/diabetes-dev.csv
+    type: uri_dataset
+    path: diabetes-dev-folder
 parameters:
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
