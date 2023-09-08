@@ -1,12 +1,12 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 code: model
-command: "python"
+command: python
 arguments:
-  - "train.py"
-  - "--training_data"
-  - "$AZUREML_DATAREFERENCE_training_data"
-  - "--reg_rate"
-  - "0.01"
+  - train.py
+  - --training_data
+  - $AZUREML_DATAREFERENCE_training_data
+  - --reg_rate
+  - 0.01
 inputs:
   AZUREML_DATAREFERENCE_training_data:
     type: path
