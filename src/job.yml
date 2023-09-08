@@ -3,10 +3,10 @@ code: model
 command: >-
   python 
   - train.py
-  --training_data $AZUREML_DATAREFERENCE_training_data
+  --training_data training_data
   --reg_rate 0.01
 inputs:
-  AZUREML_DATAREFERENCE_training_data:
+  training_data:
     type: path
     path: azureml://diabetes_data/diabetes-dev-folder
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
