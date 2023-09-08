@@ -1,18 +1,25 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 code: model
-command: python
-arguments:
-  - train.py
-  - --training_data
-  - $AZUREML_DATAREFERENCE_training_data
-  - --reg_rate
-  - 0.01
-inputs:
-  AZUREML_DATAREFERENCE_training_data:
-    type: path
-    path: azureml://diabetes_data/diabetes-dev-folder
-environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
-compute:
-  target: local
-experiment_name: MyExperimentName
-description: Training job
+type: commandJob
+properties:
+  command: python
+  arguments:
+    - train.py
+    - --training_data
+    - $AZUREML_DATAREFERENCE_training_data
+    - --reg_rate
+    - 0.01
+  inputs:
+    AZUREML_DATAREFERENCE_training_data:
+      type: uri_folder
+      dataReferenceName: diabetes_data
+  environment:
+    name: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
+  compute:
+    target: local
+  experimentName: MyExperimentName
+  description: Training job
+  codePath: .
+  outputCollection:
+    outputName: logs
+    destination: azureml.logs/my_logs
