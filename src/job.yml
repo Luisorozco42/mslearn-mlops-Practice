@@ -7,7 +7,7 @@ command: >-
 inputs:
   training_data:
     type: uri_folder
-    path: experimentation/data/diabetes-dev.csv
+    path: vscode-remote://codespaces%2Bfriendly-space-goldfish-7w7v45qxr5g2xvvg/workspaces/mslearn-mlops-Practice/experimentation/data/diabetes-dev.csv
 parameters:
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
