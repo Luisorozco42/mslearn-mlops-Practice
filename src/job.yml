@@ -6,7 +6,7 @@ command: >-
   --reg_rate $reg_rate
 inputs:
   training_data:
-    type: uri_dataset
+    type: uri_folder
     path: diabetes-dev-folder
 parameters:
   reg_rate: 0.01
