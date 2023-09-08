@@ -12,6 +12,5 @@ parameters:
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
 compute: local
-  target: local
 experiment_name: Experimento-Clasificacion-Diabetes-
 description: Training
