@@ -3,15 +3,15 @@ code: model
 command: >-
   python 
   - train.py
-  --training_data training_data
+  --training_data $AZUREML_DATAREFERENCE_training_data
   --reg_rate 0.01
 inputs:
-  training_data:
-    type: path
+  AZUREML_DATAREFERENCE_training_data:
+    type: uri_folder
     path: azureml://diabetes_data/diabetes-dev-folder
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
 compute:
-  target: challenge
+  target: local
 experiment_name: MyExperimentName
 description: Training job
 script: train.py
